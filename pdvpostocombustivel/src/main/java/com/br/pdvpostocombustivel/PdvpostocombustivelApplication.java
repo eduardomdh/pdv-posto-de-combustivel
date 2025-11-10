@@ -15,7 +15,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 title = "PDV Posto Combustível API",
                 version = "v1",
                 description = "API de exemplo com CRUD de Pessoas (Spring Boot 3 / Java 21).",
-                contact = @Contact(name = "Lucas Vicente Pereira Costa", email = "lucasvpc47@gmail.com"),
+                contact = @Contact(name = "Eduardo dias de Sousa", email = "eduardodiasdesousa28@gmail.com"),
                 license = @License(name = "MIT")
         ),
         servers = {

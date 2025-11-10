@@ -1,46 +1,68 @@
-# pdv-posto-de-combustivel
-Repositório referente a um projeto realizado na faculdade
+# PDV Posto de Combustível
 
-# Itens de Backlog
+API RESTful para um sistema de Ponto de Venda (PDV) para postos de combustível. Este projeto gerencia entidades como acessos, bombas, produtos, estoque e preços.
 
-1 - Novo Produto: Funcionalidades que ainda não existem no produto;
-2 - Melhorias: Alterações em recursos existentes para  aprimorar a experiência de usuário;
-3 - Bugs: Defeitos e falhas;
-4 - Dívida Técnica: Trabalho necessário para refatorar o código;
-5 - Mudanças de Design e Problemas de UX: Alterações necessárias para melhorar a aparência do produto;
-6 - Aquisição de Conhecimento (Spikes): Investigação ou prótotipo para mitigar dúvidas sobre o produto;
-7 - Solicitações de Clientes e Partes: Demandas vindas de usuário e outras envolvidas no  projeto;
+## Tecnologias Utilizadas
 
-1.1 - Requisitos Não Funcionais
-    1.1.1 -  Descritivo Técnico:
-        # Backend desenvolvido em Java 21;
-        # Maven para gestão dependência do projeto;
-        # Swing para interface com o usuário;
-        # Versionamento do projeto realizado: Git/Github;
+*   **Java 17**: Versão da linguagem Java utilizada no projeto.
+*   **Spring Boot 3**: Framework principal para a construção da aplicação.
+*   **Spring Data JPA**: Para persistência de dados e comunicação com o banco de dados.
+*   **Hibernate**: Implementação do JPA para mapeamento objeto-relacional.
+*   **PostgreSQL**: Banco de dados relacional utilizado para armazenar os dados.
+*   **Maven**: Ferramenta para gerenciamento de dependências e build do projeto.
+*   **SpringDoc OpenAPI (Swagger)**: Para documentação interativa da API.
 
+## Pré-requisitos
 
+Antes de começar, você precisará ter as seguintes ferramentas instaladas em seu ambiente:
 
-1.2 - Requisitos  Funcionais
-    1.2.1 - Cadastro de frentistas
-        1.2.1.1 - Acesso
-            1.2.1.1.1 - usuario
-            1.2.1.1.2 - senha
-        1.2.1.2 - Contato
-            1.2.1.2.1 - telefone
-            1.2.1.2.2 - emial
-            1.2.1.2.3 - endereco
-        1.2.1.3 -  Pessoa
-    1.2.2 - Cadastro de produtos
-    1.2.3 - Gestão de compras
-    1.2.4 - Gestão de recursos
+*   [Java JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) ou superior.
+*   [Apache Maven](https://maven.apache.org/download.cgi).
+*   Um cliente [PostgreSQL](https://www.postgresql.org/download/), como o `psql` ou pgAdmin.
+*   Uma IDE de sua preferência (ex: IntelliJ IDEA, VS Code).
 
-GRUPO 1.2.2
-   Lucas Vicente Pereira Costa
-   Felipe Rohnelt Rodrigues dos Santos
-   Miguel Melo Santos
-   Gabriel Andrade Cunha
-   Paulo Augusto Silva Miranda
-   Évelyn de Morais Alves Soares Oliveira
-   Vinicius Barbosa Puggina
-   Guilherme Goncalves Mendonca
+## Configuração do Ambiente
 
+1.  **Clone o repositório:**
+    ```bash
+    git clone <url-do-seu-repositorio>
+    cd pdv-posto-de-combustivel
+    ```
+
+2.  **Crie o Banco de Dados:**
+    Conecte-se ao seu servidor PostgreSQL e crie o banco de dados que será utilizado pela aplicação:
+    ```sql
+    CREATE DATABASE pdv_db;
+    ```
+
+3.  **Configure a Conexão:**
+    Abra o arquivo `src/main/resources/application.properties` e ajuste as seguintes propriedades com as suas credenciais do PostgreSQL, se forem diferentes do padrão:
+    ```properties
+    spring.datasource.url=jdbc:postgresql://localhost:5432/pdv_db
+    spring.datasource.username=postgres
+    spring.datasource.password=sua-senha-aqui
+    ```
+
+## Como Executar a Aplicação
+
+1.  **Build do Projeto (via Maven):**
+    No terminal, na raiz do projeto, execute o comando para baixar as dependências e compilar o projeto:
+    ```bash
+    mvn clean install
+    ```
+
+2.  **Execute a Aplicação:**
+    Você pode iniciar a aplicação diretamente pela sua IDE, executando a classe principal `PdvpostocombustivelApplication.java`, ou via linha de comando com o Maven:
+    ```bash
+    mvn spring-boot:run
+    ```
+
+A aplicação estará disponível em `http://localhost:8080`.
+
+## Documentação da API (Swagger)
+
+Com a aplicação em execução, a documentação interativa da API, gerada pelo Swagger UI, pode ser acessada no seguinte endereço:
+
+[http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+
+Nesta página, você pode visualizar todos os endpoints disponíveis, seus parâmetros, e testá-los diretamente.
